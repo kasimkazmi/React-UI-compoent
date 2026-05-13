@@ -1,53 +1,45 @@
-import Link from "next/link"
-import { ReactNode } from "react"
+import React from "react";
+import Link from "next/link";
+import { getAllDocs } from "@/lib/mdx";
 
-interface DocsLayoutProps {
-  children: ReactNode
-}
+export default async function DocsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const docs = await getAllDocs();
 
-const sidebarItems = [
-  {
-    title: "Components",
-    items: [
-      { title: "Animated Button", href: "/docs/components/animated-button" },
-      { title: "Rotating Card", href: "/docs/components/rotating-card" },
-      { title: "Floating Text", href: "/docs/components/floating-text" },
-      { title: "Pulse Button", href: "/docs/components/pulse-button" },
-    ],
-  },
-]
-
-export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <aside className="w-64 bg-gray-100 dark:bg-gray-800 p-4 border-r">
-        <h2 className="text-lg font-semibold mb-4">Documentation</h2>
-        {sidebarItems.map((section) => (
-          <div key={section.title} className="mb-4">
-            <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
-              {section.title}
-            </h3>
-            <ul className="space-y-1">
-              {section.items.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="block px-2 py-1 text-sm rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <aside className="w-64 border-r bg-card/50 backdrop-blur-md sticky top-0 h-screen overflow-y-auto hidden md:block">
+        <div className="p-6">
+          <Link href="/" className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+            Magic UI Clone
+          </Link>
+          <nav className="mt-10 space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 mb-4">
+              Components
+            </p>
+            {docs.map((doc) => (
+              <Link
+                key={doc.slug}
+                href={`/docs/${doc.slug}`}
+                className="block px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors"
+              >
+                {doc.frontmatter.title}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </aside>
-
-      {/* Main content */}
-      <main className="flex-1 p-8">
+      <div className="flex-1">
+        <header className="h-16 border-b flex items-center px-8 md:hidden">
+           <Link href="/" className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+            Magic UI
+          </Link>
+        </header>
         {children}
-      </main>
+      </div>
     </div>
-  )
+  );
 }

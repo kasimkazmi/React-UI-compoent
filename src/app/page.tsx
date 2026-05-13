@@ -1,57 +1,47 @@
-import Link from "next/link"
-import { AnimatedButton } from "@/components/ui/animated-button"
-import { RotatingCard } from "@/components/ui/rotating-card"
-import { FloatingText } from "@/components/ui/floating-text"
-import { PulseButton } from "@/components/ui/pulse-button"
-import { ComponentPreview } from "@/components/component-preview"
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-8">Custom UI Components</h1>
-      <p className="text-gray-600 dark:text-gray-400 mb-8">
-        A collection of animated UI components built with React and Framer Motion.
-      </p>
+    <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black selection:bg-indigo-500/30">
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 bg-grid-white" />
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse" />
+      <div className="absolute bottom-0 -right-4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse delay-700" />
 
-      <div className="mb-8">
-        <Link
-          href="/docs"
-          className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-        >
-          View Documentation
-        </Link>
+      <div className="relative z-10 container flex flex-col items-center text-center px-4">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-8">
+          <Sparkles className="w-4 h-4" />
+          <span>Your Personal Component Registry</span>
+        </div>
+        
+        <h1 className="text-5xl md:text-8xl font-extrabold tracking-tighter mb-6 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent leading-[1.1]">
+          Build your UI <br className="hidden md:block" /> with magic.
+        </h1>
+        
+        <p className="max-w-[600px] text-lg text-muted-foreground mb-10 leading-relaxed">
+          A high-end component library template for your custom creations. 
+          Fully automated registry, CLI ready, and open-source.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/docs/magic-button"
+            className="group inline-flex items-center justify-center h-12 px-8 rounded-full bg-indigo-600 text-white font-semibold transition-all hover:bg-indigo-700 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] active:scale-95"
+          >
+            Explore Components
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          
+          <Link
+            href="https://github.com"
+            target="_blank"
+            className="inline-flex items-center justify-center h-12 px-8 rounded-full border border-slate-800 bg-slate-900/50 text-white font-semibold transition-all hover:bg-slate-800 backdrop-blur-xl"
+          >
+            GitHub
+          </Link>
+        </div>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <ComponentPreview
-          title="Animated Button"
-          component={<AnimatedButton>Click Me</AnimatedButton>}
-          code={`<AnimatedButton>Click Me</AnimatedButton>`}
-        />
-        <ComponentPreview
-          title="Rotating Card"
-          component={
-            <RotatingCard>
-              <h4>Hover to Rotate</h4>
-              <p>This card rotates on hover.</p>
-            </RotatingCard>
-          }
-          code={`<RotatingCard>
-  <h4>Hover to Rotate</h4>
-  <p>This card rotates on hover.</p>
-</RotatingCard>`}
-        />
-        <ComponentPreview
-          title="Floating Text"
-          component={<FloatingText>Floating Text</FloatingText>}
-          code={`<FloatingText>Floating Text</FloatingText>`}
-        />
-        <ComponentPreview
-          title="Pulse Button"
-          component={<PulseButton>Pulse</PulseButton>}
-          code={`<PulseButton>Pulse</PulseButton>`}
-        />
-      </div>
-    </div>
-  )
+    </main>
+  );
 }
