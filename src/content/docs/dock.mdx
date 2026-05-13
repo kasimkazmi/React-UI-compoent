@@ -1,0 +1,68 @@
+---
+title: Dock
+description: An interactive dock with magnification effects.
+---
+
+A premium interactive dock component that responds to mouse proximity with smooth magnification effects. Inspired by the macOS dock.
+
+<ComponentPreview name="dock" />
+
+## Installation
+
+<Steps>
+
+<Step>Install dependencies</Step>
+
+```bash
+npm install motion class-variance-authority lucide-react
+```
+
+<Step>Copy the component code</Step>
+
+Create a file at `registry/dock.tsx` and paste the following code:
+
+[Link to Source](/registry/dock.tsx)
+
+</Steps>
+
+## Usage
+
+```tsx
+import { Dock, DockIcon } from "@/registry/dock";
+import { Home, Search, Settings } from "lucide-react";
+
+export default function Example() {
+  return (
+    <Dock direction="middle">
+      <DockIcon>
+        <Home className="h-full w-full" />
+      </DockIcon>
+      <DockIcon>
+        <Search className="h-full w-full" />
+      </DockIcon>
+      <DockIcon>
+        <Settings className="h-full w-full" />
+      </DockIcon>
+    </Dock>
+  );
+}
+```
+
+## Props
+
+### Dock
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `iconSize` | `number` | `40` | The base size of the icons |
+| `iconMagnification` | `number` | `60` | The maximum size of the icons on hover |
+| `iconDistance` | `number` | `140` | The distance at which magnification starts |
+| `direction` | `top \| middle \| bottom` | `middle` | The vertical alignment of the dock |
+| `children` | `ReactNode` | - | The dock items |
+
+### DockIcon
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | - | The content of the icon |
+| `className` | `string` | - | Additional CSS classes |
