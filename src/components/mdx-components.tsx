@@ -86,4 +86,33 @@ export const MDXComponents = {
       {...props}
     />
   ),
+  table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+    <div className="my-6 w-full overflow-y-auto rounded-lg border border-slate-800">
+      <table className={cn("w-full text-sm", className)} {...props} />
+    </div>
+  ),
+  tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <tr
+      className={cn("m-0 border-t border-slate-800 p-0 even:bg-slate-900/50", className)}
+      {...props}
+    />
+  ),
+  th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <th
+      className={cn(
+        "border-slate-800 px-4 py-2 text-left font-bold text-white [&[align=center]]:text-center [&[align=right]]:text-right",
+        className
+      )}
+      {...props}
+    />
+  ),
+  td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <td
+      className={cn(
+        "border-slate-800 px-4 py-2 text-left text-slate-400 [&[align=center]]:text-center [&[align=right]]:text-right",
+        className
+      )}
+      {...props}
+    />
+  ),
 };
