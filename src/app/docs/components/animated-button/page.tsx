@@ -48,7 +48,7 @@ export function AnimatedButton({ children, className }: AnimatedButtonProps) {
         </TabsContent>
         <TabsContent value="code">
           <div className="relative">
-            <CopyButton text={componentCode} />
+            <CopyButton value={componentCode} />
             <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded text-sm overflow-x-auto mt-2">
               <code>{componentCode}</code>
             </pre>
@@ -66,7 +66,7 @@ export function AnimatedButton({ children, className }: AnimatedButtonProps) {
               Copy and paste the following code into your project.
             </p>
             <div className="relative">
-              <CopyButton text={componentCode} />
+              <CopyButton value={componentCode} />
               <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded text-sm overflow-x-auto mt-2">
                 <code>{componentCode}</code>
               </pre>

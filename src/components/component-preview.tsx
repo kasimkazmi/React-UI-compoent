@@ -20,7 +20,7 @@ export const ComponentPreview = async ({ name }: ComponentPreviewProps) => {
   const Preview = COMPONENT_MAP[name];
 
   if (!component || !Preview) {
-    return <div className="text-red-500 p-4 border rounded-lg">Component "{name}" not found.</div>;
+    return <div className="text-red-500 p-4 border rounded-lg">Component &quot;{name}&quot; not found.</div>;
   }
 
   const filePath = component.files[0] || `components/ui/${name}.tsx`;
