@@ -35,18 +35,18 @@ export const ComponentPreviewClient = ({
         className="relative w-full"
       >
         <div className="flex items-center justify-between pb-3">
-          <Tabs.List className="flex items-center gap-6 border-b border-slate-800 bg-transparent p-0">
+          <Tabs.List className="flex items-center gap-6 border-b border-border bg-transparent p-0">
             {["preview", "code"].map((tab) => (
               <Tabs.Trigger
                 key={tab}
                 value={tab}
-                className="relative h-9 bg-transparent px-1 pb-3 pt-2 font-medium text-slate-400 transition-colors hover:text-white data-[state=active]:text-white capitalize"
+                className="relative h-9 bg-transparent px-1 pb-3 pt-2 font-medium text-muted-foreground transition-colors hover:text-foreground data-[state=active]:text-foreground capitalize"
               >
                 {tab}
                 {activeTab === tab && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-indigo-500"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary"
                   />
                 )}
               </Tabs.Trigger>
@@ -59,13 +59,12 @@ export const ComponentPreviewClient = ({
             <Tabs.Content
               value="preview"
               forceMount
-              className="relative rounded-xl border border-slate-800 bg-slate-950/50 p-12 flex items-center justify-center min-h-[400px] overflow-hidden backdrop-blur-sm shadow-2xl focus-visible:outline-none"
+              className="relative rounded-xl border border-border bg-white p-12 flex items-center justify-center min-h-[400px] overflow-hidden shadow-sm focus-visible:outline-none"
             >
-              <div className="absolute inset-0 bg-grid-white opacity-[0.03]" />
               <div className="absolute right-4 top-4 z-20">
                 <button
                   onClick={handleRestart}
-                  className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 bg-slate-900/50 text-slate-400 hover:bg-slate-800 transition-colors"
+                  className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-secondary hover:bg-muted text-muted-foreground transition-colors"
                   title="Restart animation"
                   type="button"
                 >
@@ -74,7 +73,7 @@ export const ComponentPreviewClient = ({
               </div>
               <div
                 key={key}
-                className="relative z-10 transition-all duration-500 hover:scale-105"
+                className="relative z-10 transition-all duration-500 hover:scale-[1.02]"
               >
                 {preview}
               </div>
@@ -87,25 +86,25 @@ export const ComponentPreviewClient = ({
               forceMount
               className="focus-visible:outline-none"
             >
-              <div className="relative flex flex-col rounded-xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl">
-                <div className="flex items-center justify-between px-4 py-3 bg-slate-900/50 border-b border-slate-800">
+              <div className="relative flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-sm">
+                <div className="flex items-center justify-between px-4 py-3 bg-secondary/50 border-b border-border">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-6 w-6 items-center justify-center rounded bg-slate-800">
-                      <FileCode className="h-3.5 w-3.5 text-slate-400" />
+                    <div className="flex h-6 w-6 items-center justify-center rounded bg-secondary">
+                      <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
                     </div>
-                    <span className="text-xs font-mono text-slate-400 tracking-tight">
+                    <span className="text-xs font-mono text-muted-foreground tracking-tight">
                       {filePath}
                     </span>
                   </div>
                   <CopyButton
                     value={code}
-                    className="h-8 w-8 bg-slate-900/50 border-slate-800 hover:bg-slate-800 text-slate-400"
+                    className="h-8 w-8 bg-secondary border-border hover:bg-muted text-muted-foreground"
                   />
                 </div>
 
-                <div className="relative max-h-[500px] overflow-auto p-6 text-sm font-mono leading-relaxed scrollbar-thin scrollbar-thumb-slate-800">
+                <div className="relative max-h-[500px] overflow-auto p-6 text-sm font-mono leading-relaxed scrollbar-thin scrollbar-thumb-border">
                   <div className="flex">
-                    <div className="mr-6 flex flex-col text-right text-slate-700 select-none min-w-[1.5rem]">
+                    <div className="mr-6 flex flex-col text-right text-muted-foreground/30 select-none min-w-[1.5rem]">
                       {code.split("\n").map((_, i) => (
                         <span key={i} className="block">
                           {i + 1}

@@ -16,41 +16,42 @@ export default async function DocPage({ params }: PageProps) {
   }
 
   return (
-    <div className="flex w-full gap-10">
-      <main className="flex-1 py-16 px-8 md:px-16">
-        <nav className="flex items-center space-x-1 text-sm text-slate-500 mb-8">
-          <Link href="/docs" className="hover:text-white transition-colors">Docs</Link>
-          <span className="text-slate-700">/</span>
-          <span className="text-slate-700">Components</span>
-          <span className="text-slate-700">/</span>
-          <span className="text-white font-medium">{doc.frontmatter.title}</span>
+    <div className="flex w-full gap-24">
+      <main className="flex-1 min-w-0">
+        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-10">
+          <Link href="/docs" className="hover:text-foreground transition-colors">Docs</Link>
+          <span className="opacity-40">/</span>
+          <span>Components</span>
+          <span className="opacity-40">/</span>
+          <span className="text-foreground font-medium">{doc.frontmatter.title}</span>
         </nav>
 
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tighter text-white">
+        <div className="mb-16">
+          <h1 className="heading-landing text-5xl mb-6">
             {doc.frontmatter.title}
           </h1>
-          <p className="text-xl text-slate-400 leading-relaxed max-w-2xl">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
             {doc.frontmatter.description}
           </p>
         </div>
         
-        <div className="prose prose-slate prose-invert max-w-none 
-          prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white
-          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-slate-800/50 prose-h2:pb-2
-          prose-a:text-indigo-400">
+        <div className="prose prose-neutral max-w-none 
+          prose-headings:font-serif prose-headings:font-normal prose-headings:tracking-tight prose-headings:text-foreground
+          prose-h2:text-2xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:border-b prose-h2:border-border prose-h2:pb-3
+          prose-p:text-muted-foreground prose-p:leading-relaxed
+          prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
           {doc.content}
         </div>
       </main>
 
-      <aside className="hidden xl:block w-64 shrink-0 py-16 pr-8">
-        <div className="sticky top-16">
-          <p className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">On This Page</p>
-          <ul className="space-y-3 text-sm text-slate-400">
-            <li><a href="#" className="hover:text-white transition-colors">Preview</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Installation</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Usage</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Props</a></li>
+      <aside className="hidden xl:block w-56 shrink-0">
+        <div className="sticky top-24">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 mb-6">On This Page</p>
+          <ul className="space-y-4 text-[14px] text-muted-foreground">
+            <li><a href="#" className="hover:text-foreground transition-colors">Preview</a></li>
+            <li><a href="#" className="hover:text-foreground transition-colors">Installation</a></li>
+            <li><a href="#" className="hover:text-foreground transition-colors">Usage</a></li>
+            <li><a href="#" className="hover:text-foreground transition-colors">Props</a></li>
           </ul>
         </div>
       </aside>
