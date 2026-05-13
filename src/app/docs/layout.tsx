@@ -12,17 +12,20 @@ export default async function DocsLayout({
 
   return (
     <div className="flex min-h-screen bg-black">
-      <aside className="w-64 border-r border-slate-900 bg-black sticky top-0 h-screen overflow-y-auto hidden md:block">
+      <aside className="w-64 border-r border-slate-900/50 bg-black/50 backdrop-blur-xl sticky top-0 h-screen overflow-y-auto hidden md:block">
         <div className="p-6">
-          <Link href="/" className="flex items-center gap-2 text-lg font-bold text-white mb-8">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-lg font-bold text-white mb-10"
+          >
             <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)]">
-               <Sparkles className="w-4 h-4 text-white" />
+              <Sparkles className="w-4 h-4 text-white" />
             </div>
-            <span>Magic UI</span>
+            <span className="tracking-tighter">Magic UI</span>
           </Link>
           <nav className="space-y-8">
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 px-2 mb-4">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 px-3 mb-4">
                 Components
               </h4>
               <div className="space-y-1">
@@ -30,7 +33,7 @@ export default async function DocsLayout({
                   <Link
                     key={doc.slug}
                     href={`/docs/${doc.slug}`}
-                    className="flex items-center px-3 py-1.5 text-sm font-medium rounded-md text-slate-400 hover:text-white hover:bg-slate-900 transition-all"
+                    className="flex items-center px-3 py-2 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-900/50 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all"
                   >
                     {doc.frontmatter.title}
                   </Link>

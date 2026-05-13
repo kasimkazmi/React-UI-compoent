@@ -3,6 +3,7 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { ComponentPreview } from "@/components/component-preview";
 import { MDXComponents } from "@/components/mdx-components";
+import remarkGfm from "remark-gfm";
 
 const contentDir = path.join(process.cwd(), "src/content/docs");
 
@@ -14,7 +15,7 @@ const components = {
 export async function getDocBySlug(slug: string) {
   const fileName = slug.endsWith(".mdx") ? slug : `${slug}.mdx`;
   const filePath = path.join(contentDir, fileName);
-  
+
   if (!fs.existsSync(filePath)) {
     return null;
   }
@@ -26,7 +27,12 @@ export async function getDocBySlug(slug: string) {
     description: string;
   }>({
     source: fileContent,
-    options: { parseFrontmatter: true },
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
+    },
     components,
   });
 

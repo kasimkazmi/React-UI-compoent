@@ -7,7 +7,7 @@ export const MDXComponents = {
   h1: ({ className, ...props }: any) => (
     <h1
       className={cn(
-        "mt-2 scroll-m-20 text-4xl font-bold tracking-tight text-white",
+        "mt-2 scroll-m-20 text-4xl font-extrabold tracking-tighter text-white",
         className
       )}
       {...props}
@@ -16,7 +16,7 @@ export const MDXComponents = {
   h2: ({ className, ...props }: any) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b border-slate-800 pb-2 text-3xl font-semibold tracking-tight text-white first:mt-0",
+        "mt-12 scroll-m-20 border-b border-slate-800/50 pb-2 text-2xl font-semibold tracking-tight text-white first:mt-0",
         className
       )}
       {...props}
@@ -25,7 +25,7 @@ export const MDXComponents = {
   h3: ({ className, ...props }: any) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight text-white",
+        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-white",
         className
       )}
       {...props}
@@ -49,7 +49,7 @@ export const MDXComponents = {
   code: ({ className, ...props }: any) => (
     <code
       className={cn(
-        "relative rounded bg-slate-800 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-white",
+        "relative rounded bg-slate-800/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-indigo-300",
         className
       )}
       {...props}
@@ -60,11 +60,11 @@ export const MDXComponents = {
     const lang = children?.props?.className?.replace("language-", "") || "tsx";
 
     return (
-      <div className="relative mb-6 mt-6 overflow-hidden rounded-xl border border-slate-800 bg-slate-950 p-6 shadow-xl">
+      <div className="relative mb-6 mt-6 overflow-hidden rounded-xl border border-slate-800/50 bg-slate-950/50 backdrop-blur-sm p-6 shadow-2xl">
         <div className="absolute right-4 top-4 z-20">
           <CopyButton
             value={code}
-            className="h-8 w-8 bg-slate-900 border-slate-800 hover:bg-slate-800"
+            className="h-8 w-8 bg-slate-900/50 border-slate-800/50 hover:bg-slate-800 text-slate-400 hover:text-white transition-all"
           />
         </div>
         <CodeBlock code={code} lang={lang} />
@@ -73,34 +73,37 @@ export const MDXComponents = {
   },
   Steps: ({ ...props }) => (
     <div
-      className="[&>h3]:step steps mb-12 ml-4 border-l pl-8 [border-image:linear-gradient(to_bottom,var(--tw-gradient-stops))_1_100%] from-slate-800 to-transparent [counter-reset:step]"
+      className="steps mb-12 ml-4 border-l border-slate-800/50 pl-8 [counter-reset:step]"
       {...props}
     />
   ),
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-32 text-xl font-medium tracking-tight text-white",
+        "mt-8 scroll-m-32 text-lg font-semibold tracking-tight text-white",
         className
       )}
       {...props}
     />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="my-6 w-full overflow-y-auto rounded-lg border border-slate-800">
+    <div className="my-6 w-full overflow-y-auto rounded-xl border border-slate-800/50 bg-slate-950/20">
       <table className={cn("w-full text-sm", className)} {...props} />
     </div>
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn("m-0 border-t border-slate-800 p-0 even:bg-slate-900/50", className)}
+      className={cn(
+        "m-0 border-t border-slate-800/50 p-0 even:bg-slate-900/20",
+        className
+      )}
       {...props}
     />
   ),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
-        "border-slate-800 px-4 py-2 text-left font-bold text-white [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border-slate-800/50 px-4 py-3 text-left font-bold text-slate-100 [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -109,7 +112,7 @@ export const MDXComponents = {
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
-        "border-slate-800 px-4 py-2 text-left text-slate-400 [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border-slate-800/50 px-4 py-3 text-left text-slate-400 [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
