@@ -37,8 +37,8 @@ export default async function DocPage({ params }: PageProps) {
         
         <div className="prose prose-slate prose-invert max-w-none 
           prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white
-          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-slate-800 prose-h2:pb-2
-          prose-a:text-indigo-400 prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800">
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-slate-800/50 prose-h2:pb-2
+          prose-a:text-indigo-400">
           {doc.content}
         </div>
       </main>
