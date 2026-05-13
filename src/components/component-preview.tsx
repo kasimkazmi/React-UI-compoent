@@ -1,37 +1,41 @@
-"use client"
+import React from "react";
+import { getRegistryComponent } from "@/lib/registry";
+import { CopyButton } from "./copy-button";
+import { MagicButton } from "@/registry/magic-button"; // Temporary direct import for the example
 
-import { useState } from "react"
-import { CopyButton } from "./copy-button"
-
-import { cn } from "@/lib/utils"
+// Map of components for the preview sandbox
+const COMPONENT_MAP: Record<string, React.ComponentType> = {
+  "magic-button": MagicButton,
+};
 
 interface ComponentPreviewProps {
-  component: React.ReactNode
-  code: string
-  title: string
+  name: string;
 }
 
-export function ComponentPreview({ component, code, title }: ComponentPreviewProps) {
-  const [showCode, setShowCode] = useState(false)
+export const ComponentPreview = ({ name }: ComponentPreviewProps) => {
+  const component = getRegistryComponent(name);
+  const Preview = COMPONENT_MAP[name];
+
+  if (!component || !Preview) {
+    return <div className="text-red-500">Component "{name}" not found.</div>;
+  }
 
   return (
-    <div className="border rounded-lg p-4">
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <div className="mb-4">{component}</div>
-      <div className="flex gap-2">
-        <button
-          onClick={() => setShowCode(!showCode)}
-          className="px-3 py-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded transition-colors"
-        >
-          {showCode ? "Hide Code" : "Show Code"}
-        </button>
-        <CopyButton text={code} />
+    <div className="group relative my-4 flex flex-col space-y-2">
+      <div className="relative rounded-lg border bg-slate-950/50 p-10 flex items-center justify-center min-h-[200px] overflow-hidden backdrop-blur-sm">
+        <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
+        <Preview />
       </div>
-      {showCode && (
-        <pre className="mt-2 p-2 bg-gray-100 dark:bg-gray-800 rounded text-sm overflow-x-auto">
-          <code>{code}</code>
+      
+      <div className="relative rounded-lg border bg-slate-900 overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2 bg-slate-800/50 border-b">
+          <span className="text-xs font-mono text-slate-400">{component.files[0]}</span>
+          <CopyButton value={component.content} />
+        </div>
+        <pre className="p-4 overflow-x-auto text-sm font-mono text-slate-300">
+          <code>{component.content}</code>
         </pre>
-      )}
+      </div>
     </div>
-  )
-}
+  );
+};

@@ -1,8 +1,13 @@
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { ComponentPreview } from "@/components/component-preview";
 
 const contentDir = path.join(process.cwd(), "src/content/docs");
+
+const components = {
+  ComponentPreview,
+};
 
 export async function getDocBySlug(slug: string) {
   const fileName = slug.endsWith(".mdx") ? slug : `${slug}.mdx`;
@@ -20,6 +25,7 @@ export async function getDocBySlug(slug: string) {
   }>({
     source: fileContent,
     options: { parseFrontmatter: true },
+    components,
   });
 
   return {
