@@ -2,11 +2,13 @@ import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { ComponentPreview } from "@/components/component-preview";
+import { MDXComponents } from "@/components/mdx-components";
 
 const contentDir = path.join(process.cwd(), "src/content/docs");
 
 const components = {
   ComponentPreview,
+  ...MDXComponents,
 };
 
 export async function getDocBySlug(slug: string) {

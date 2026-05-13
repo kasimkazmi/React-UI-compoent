@@ -11,6 +11,8 @@
     "postbuild": "npm run build:registry"
   },
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
@@ -19,6 +21,7 @@
     "next-mdx-remote": "^6.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "shiki": "^4.0.2",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {

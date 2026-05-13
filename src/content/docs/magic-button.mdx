@@ -5,14 +5,36 @@ description: A smooth animated button using Framer Motion.
 
 A smooth animated button built with **Framer Motion**. It supports hover scales and tap interactions out of the box.
 
+<ComponentPreview name="magic-button" />
+
 ## Installation
 
 ### CLI
+
 ```bash
 npx shadcn@latest add http://localhost:3000/registry/magic-button.json
 ```
 
 ### Manual
+
 1. Copy the code from the component tab.
-2. Create a file at `components/ui/magic-button.tsx`.
+2. Create a file at `components/magic-button.tsx`.
 3. Paste the code.
+
+## Usage
+
+```tsx
+import { MagicButton } from "@/components/magic-button";
+
+export default function Example() {
+  return <MagicButton>Magic</MagicButton>;
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | - | The content of the button |
+| `className` | `string` | - | Additional CSS classes |
+
