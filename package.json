@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:registry": "ts-node scripts/build-registry.ts",
+    "build:registry": "tsx scripts/build-registry.ts",
     "postbuild": "npm run build:registry"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
