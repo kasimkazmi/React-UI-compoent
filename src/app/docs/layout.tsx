@@ -37,7 +37,7 @@ const DOC_CATEGORIES = [
     title: "Layout",
     icon: Layout,
     items: [
-      { title: "Dock", href: "/docs/dock" },
+      { title: "Coming Soon", href: "/docs/coming-soon" },
     ]
   },
   {
@@ -99,7 +99,7 @@ export default async function DocsLayout({
             React UI
           </Link>
         </header>
-        <main className="flex-1 overflow-x-hidden p-8 md:p-12 lg:p-16">
+        <main className="flex-1 p-8 md:p-12 lg:p-16">
           <div className="max-w-[1200px] mx-auto">
             {children}
           </div>

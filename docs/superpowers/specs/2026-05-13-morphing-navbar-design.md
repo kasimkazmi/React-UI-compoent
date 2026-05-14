@@ -1,7 +1,7 @@
 # Design Spec: MorphingNavbar
 
 ## Overview
-A premium, standalone React header component that dynamically morphs its height, background, and element scaling based on scroll position. Designed for the "Ingexta" design system with warm neutrals and a professional, editorial feel.
+A premium, standalone React header component that dynamically morphs its height, background, and element scaling based on scroll position. Designed for the "Premium UI" design system with warm neutrals and a professional, editorial feel.
 
 ## Goals
 - Replicate the "LearnHeader" animation and style from the `francais-pro` project.
@@ -34,10 +34,10 @@ A premium, standalone React header component that dynamically morphs its height,
 ### 4. Simplified UI Parts (Internal)
 To maintain standalone status, the following will be mocked or simplified within the component:
 - **UserAvatar**: A simple SVG/Image-based avatar component.
-- **Button**: A basic styled button that matches the Ingexta aesthetic.
+- **Button**: A basic styled button that matches the Premium UI aesthetic.
 - **ThemeToggle**: A simplified dark/light mode toggle.
 
-## Design Details (Ingexta Style)
+## Design Details (Premium UI Style)
 - **Palette**: Warm neutrals only.
   - Background: `#F7F5F3` (root), `#FFFFFF` (header collapsed).
   - Foreground: `#37322F` (primary text).

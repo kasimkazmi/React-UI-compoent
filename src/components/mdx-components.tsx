@@ -13,15 +13,26 @@ export const MDXComponents = {
       {...props}
     />
   ),
-  h2: ({ className, ...props }: any) => (
-    <h2
-      className={cn(
-        "mt-12 scroll-m-20 border-b border-border pb-2 text-2xl font-semibold tracking-tight text-foreground first:mt-0",
-        className
-      )}
-      {...props}
-    />
-  ),
+  h2: ({ className, children, ...props }: any) => {
+    const id = React.Children.toArray(children)
+      .join("")
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
+      
+    return (
+      <h2
+        id={id}
+        className={cn(
+          "mt-12 scroll-m-20 border-b border-border pb-2 text-2xl font-semibold tracking-tight text-foreground first:mt-0",
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </h2>
+    );
+  },
   h3: ({ className, ...props }: any) => (
     <h3
       className={cn(

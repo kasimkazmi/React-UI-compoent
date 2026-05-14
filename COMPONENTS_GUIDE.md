@@ -1,6 +1,6 @@
-# Ingexta Component & Documentation Pattern
+# React UI Component & Documentation Pattern
 
-All new components added to the React UI library MUST follow the **Ingexta Editorial Pattern** to maintain brand consistency and a premium developer experience.
+All new components added to the React UI library MUST follow the **Premium Editorial Pattern** to maintain brand consistency and a premium developer experience.
 
 ## 1. File Architecture
 New components are split into three distinct files to separate core logic from interactive documentation.
@@ -9,12 +9,12 @@ New components are split into three distinct files to separate core logic from i
 | :--- | :--- |
 | `src/registry/[name].tsx` | **The raw UI component**. This is what users will copy/paste. |
 | `src/registry/[name]-demo.tsx` | **The interactive demo**. Provides context (e.g., scroll containers, backgrounds). |
-| `src/content/docs/[name].mdx` | **The documentation page**. Written in MDX using standard Ingexta layout. |
+| `src/content/docs/[name].mdx` | **The documentation page**. Written in MDX using standard premium layout. |
 
 ---
 
 ## 2. Aesthetic Standards
-Ingexta follows a high-end, editorial aesthetic.
+React UI follows a high-end, editorial aesthetic.
 - **Headlines**: Use `Instrument Serif` (or `font-serif`).
 - **Body**: Use `DM Sans` (or `font-sans`) with warm neutrals.
 - **Colors**: Monochrome warm palette (`#37322F` for text, `#FAF9F7` for backgrounds).

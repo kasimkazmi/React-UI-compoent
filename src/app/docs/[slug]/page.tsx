@@ -1,12 +1,20 @@
 import Link from "next/link";
 import { getDocBySlug } from "@/lib/mdx";
 import { notFound } from "next/navigation";
+import { TableOfContents } from "@/components/table-of-contents";
 
 interface PageProps {
   params: {
     slug: string;
   };
 }
+
+const TOC_ITEMS = [
+  { title: "Preview", id: "preview" },
+  { title: "Installation", id: "installation" },
+  { title: "Usage", id: "usage" },
+  { title: "Props", id: "props" },
+];
 
 export default async function DocPage({ params }: PageProps) {
   const doc = await getDocBySlug(params.slug);
@@ -40,20 +48,14 @@ export default async function DocPage({ params }: PageProps) {
           prose-h2:text-2xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:border-b prose-h2:border-border prose-h2:pb-3
           prose-p:text-muted-foreground prose-p:leading-relaxed
           prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
-          {doc.content}
+          <div id="preview">
+            {doc.content}
+          </div>
         </div>
       </main>
 
       <aside className="hidden xl:block w-56 shrink-0">
-        <div className="sticky top-24">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 mb-6">On This Page</p>
-          <ul className="space-y-4 text-[14px] text-muted-foreground">
-            <li><a href="#" className="hover:text-foreground transition-colors">Preview</a></li>
-            <li><a href="#" className="hover:text-foreground transition-colors">Installation</a></li>
-            <li><a href="#" className="hover:text-foreground transition-colors">Usage</a></li>
-            <li><a href="#" className="hover:text-foreground transition-colors">Props</a></li>
-          </ul>
-        </div>
+        <TableOfContents items={TOC_ITEMS} />
       </aside>
     </div>
   );

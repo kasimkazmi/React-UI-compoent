@@ -1,8 +1,8 @@
-# Ingexta Theme Integration Implementation Plan
+# Premium UI Theme Integration Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Transform the project's visual identity to match the Ingexta brand (warm whites, precision typography, light mode only).
+**Goal:** Transform the project's visual identity to match the Premium UI brand (warm whites, precision typography, light mode only).
 
 **Architecture:** We will replace the existing HSL-based dark mode variables in `globals.css` with hex-based warm neutral tokens. Typography will be updated via `next/font/google` and extended in `tailwind.config.js`.
 
@@ -67,7 +67,7 @@ git commit -m "style: add DM Sans and Instrument Serif fonts"
 **Files:**
 - Modify: `src/app/globals.css`
 
-- [ ] **Step 1: Overwrite CSS variables with Ingexta Palette**
+- [ ] **Step 1: Overwrite CSS variables with Premium UI Palette**
 
 Replace the `:root` block and add utility classes in `src/app/globals.css`:
 

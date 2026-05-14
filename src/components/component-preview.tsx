@@ -1,7 +1,6 @@
 import React from "react";
 import { getRegistryComponent } from "@/lib/registry";
 import { MagicButtonDemo } from "@/registry/magic-button-demo";
-import { DockDemo } from "@/registry/dock-demo";
 import { MorphingNavbarDemo } from "@/registry/morphing-navbar-demo";
 import { AnimatedButtonDemo } from "@/registry/animated-button-demo";
 import { PulseButtonDemo } from "@/registry/pulse-button-demo";
@@ -13,7 +12,6 @@ import { CodeBlock } from "./code-block";
 // Map of components for the preview sandbox
 const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   "magic-button": MagicButtonDemo,
-  "dock": DockDemo,
   "morphing-navbar": MorphingNavbarDemo,
   "animated-button": AnimatedButtonDemo,
   "pulse-button": PulseButtonDemo,

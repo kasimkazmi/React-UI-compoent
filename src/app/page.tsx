@@ -11,7 +11,7 @@ export default function HomePage() {
       <div className="relative z-10 w-full max-w-[1400px] px-6 text-center">
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-border bg-white/50 text-muted-foreground text-sm font-medium mb-8 backdrop-blur-sm">
           <Sparkles className="w-4 h-4 text-primary/60" />
-          <span>Now with Ingexta precision design</span>
+          <span>Now with precision editorial design</span>
         </div>
 
         <h1 className="heading-landing text-6xl md:text-8xl mb-8">
@@ -40,7 +40,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Decorative Diagonal Stripes (Ingexta Style) */}
+      {/* Decorative Diagonal Stripes (Editorial Style) */}
       <div className="absolute top-12 right-12 opacity-10 pointer-events-none">
         <div className="stripe-landing w-40 bg-primary mb-4" />
         <div className="stripe-landing w-24 bg-primary" />

@@ -1,6 +1,6 @@
-# Design Spec: Ingexta Theme Integration for React UI Component
+# Design Spec: Premium UI Theme Integration for React UI Component
 
-This document outlines the migration of the `React-UI-compoent` project styling to match the **Ingexta** brand identity (Precise, Modern, Accessible).
+This document outlines the migration of the `React-UI-compoent` project styling to match the **Premium UI** brand identity (Precise, Modern, Accessible).
 
 ## 1. Aesthetic Direction
 - **Theme**: Light mode only.
@@ -50,7 +50,7 @@ theme: {
 ```
 
 ## 3. Signature UI Classes
-Add specific utility classes to `globals.css` to match Ingexta's high-end feel:
+Add specific utility classes to `globals.css` to match Premium UI's high-end feel:
 
 1.  **.btn-landing**: Pill-shaped, gradient background, subtle inner shadow.
 2.  **.heading-landing**: Semantic headings with specific weight and tracking.
@@ -58,7 +58,7 @@ Add specific utility classes to `globals.css` to match Ingexta's high-end feel:
 
 ## 4. Migration Plan
 1.  Update `src/app/layout.tsx` to include font imports and class applications.
-2.  Overwrite `src/app/globals.css` with the new Ingexta-inspired variables and base styles.
+2.  Overwrite `src/app/globals.css` with the new Premium UI-inspired variables and base styles.
 3.  Modify `tailwind.config.js` to include the new font families.
 4.  Remove legacy dark mode logic/gradients if present.
 

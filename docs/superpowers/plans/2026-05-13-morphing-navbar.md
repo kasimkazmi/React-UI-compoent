@@ -267,7 +267,7 @@ export default function MorphingNavbarPage() {
              {/* Simulated scroll container */}
              <div className="absolute inset-0 overflow-y-auto custom-scrollbar">
                 <MorphingNavbar 
-                  title="Ingexta Path" 
+                  title="Premium UI Path" 
                   breadcrumbSteps={[{ label: "Components" }, { label: "Morphing Navbar" }]}
                 />
                 <div className="p-10 space-y-8">
