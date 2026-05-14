@@ -1,0 +1,13 @@
+{
+  "name": "pulse-button",
+  "type": "components:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/pulse-button.tsx",
+      "content": "\"use client\"\r\n\r\nimport { motion } from \"framer-motion\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\ninterface PulseButtonProps {\r\n  children: React.ReactNode\r\n  className?: string\r\n}\r\n\r\nexport function PulseButton({ children, className }: PulseButtonProps) {\r\n  return (\r\n    <motion.button\r\n      className={cn(\r\n        \"px-4 py-2 bg-green-500 text-white rounded-lg\",\r\n        className\r\n      )}\r\n      animate={{ scale: [1, 1.1, 1] }}\r\n      transition={{ duration: 1, repeat: Infinity }}\r\n    >\r\n      {children}\r\n    </motion.button>\r\n  )\r\n}"
+    }
+  ]
+}

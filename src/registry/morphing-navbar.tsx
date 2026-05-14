@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Menu, 
@@ -48,7 +49,7 @@ const NavButton = ({
 const UserAvatar = ({ src, alt }: { src?: string; alt: string }) => (
   <div className="h-10 w-10 overflow-hidden rounded-full border border-[#E0DEDB] bg-[#F0EDEA] flex items-center justify-center">
     {src ? (
-      <img src={src} alt={alt} className="h-full w-full object-cover" />
+      <Image src={src} alt={alt} width={40} height={40} className="h-full w-full object-cover" />
     ) : (
       <span className="text-xs font-bold text-[#605A57]">{alt.charAt(0)}</span>
     )}
