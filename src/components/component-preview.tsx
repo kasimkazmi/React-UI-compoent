@@ -30,7 +30,7 @@ export const ComponentPreview = async ({ name }: ComponentPreviewProps) => {
       preview={<Preview />}
       code={component.content}
       filePath={filePath}
-      highlightedCode={<CodeBlock code={component.content} lang="tsx" />}
+      highlightedCode={<CodeBlock code={component.content} lang="tsx" minimal={true} />}
     />
   );
 };

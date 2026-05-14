@@ -60,13 +60,7 @@ export const MDXComponents = {
     const lang = children?.props?.className?.replace("language-", "") || "tsx";
 
     return (
-      <div className="relative mb-6 mt-6 overflow-hidden rounded-xl border border-border bg-card p-6 shadow-sm">
-        <div className="absolute right-4 top-4 z-20">
-          <CopyButton
-            value={code}
-            className="h-8 w-8 bg-secondary border-border hover:bg-muted text-muted-foreground transition-all"
-          />
-        </div>
+      <div className="relative mb-8 mt-8">
         <CodeBlock code={code} lang={lang} />
       </div>
     );

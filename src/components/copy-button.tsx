@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Check, Copy } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
@@ -22,20 +23,22 @@ export const CopyButton = ({ value, className, ...props }: CopyButtonProps) => {
   };
 
   return (
-    <button
+    <motion.button
       onClick={copyToClipboard}
+      title={hasCopied ? "Copied!" : "Copy code"}
+      whileTap={{ scale: 0.9 }}
       className={cn(
-        "relative z-10 inline-flex h-8 w-8 items-center justify-center rounded-md border bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+        "relative z-10 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all hover:opacity-70 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
         className
       )}
       {...props}
     >
       {hasCopied ? (
-        <Check className="h-4 w-4 text-green-500" />
+        <Check className="h-4 w-4 text-emerald-500" />
       ) : (
         <Copy className="h-4 w-4" />
       )}
       <span className="sr-only">Copy</span>
-    </button>
+    </motion.button>
   );
 };

@@ -86,27 +86,27 @@ export const ComponentPreviewClient = ({
               forceMount
               className="focus-visible:outline-none"
             >
-              <div className="relative flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-sm">
-                <div className="flex items-center justify-between px-4 py-3 bg-secondary/50 border-b border-border">
+              <div className="relative flex flex-col rounded-xl border border-[#37322F]/20 bg-[#1A1A16] shadow-2xl">
+                <div className="flex items-center justify-between px-4 py-3 bg-[#242421] border-b border-[#37322F]/10 rounded-t-xl">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-6 w-6 items-center justify-center rounded bg-secondary">
-                      <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
+                    <div className="flex h-6 w-6 items-center justify-center rounded bg-[#37322F]/30">
+                      <FileCode className="h-3.5 w-3.5 text-[#E0DEDB]/40" />
                     </div>
-                    <span className="text-xs font-mono text-muted-foreground tracking-tight">
+                    <span className="text-xs font-mono text-[#E0DEDB]/60 tracking-tight">
                       {filePath}
                     </span>
                   </div>
                   <CopyButton
                     value={code}
-                    className="h-8 w-8 bg-secondary border-border hover:bg-muted text-muted-foreground"
+                    className="h-7 w-7 bg-transparent border-none text-[#E0DEDB]/40 hover:text-[#E0DEDB] transition-all"
                   />
                 </div>
 
-                <div className="relative max-h-[500px] overflow-auto p-6 text-sm font-mono leading-relaxed scrollbar-thin scrollbar-thumb-border">
+                <div className="relative max-h-[500px] overflow-auto p-6 text-[13px] font-mono leading-relaxed custom-scrollbar">
                   <div className="flex">
-                    <div className="mr-6 flex flex-col text-right text-muted-foreground/30 select-none min-w-[1.5rem]">
+                    <div className="mr-6 flex flex-col text-right text-[#E0DEDB]/10 select-none min-w-[1.5rem] border-r border-[#37322F]/10 pr-4">
                       {code.split("\n").map((_, i) => (
-                        <span key={i} className="block">
+                        <span key={i} className="block leading-relaxed">
                           {i + 1}
                         </span>
                       ))}

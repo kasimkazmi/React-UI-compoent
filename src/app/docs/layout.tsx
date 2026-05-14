@@ -1,46 +1,96 @@
 import React from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
-import { getAllDocs } from "@/lib/mdx";
+import { 
+  Layout, 
+  MousePointer2, 
+  Type, 
+  CreditCard, 
+  PanelTop,
+  Sparkles
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const DOC_CATEGORIES = [
+  {
+    title: "Headers",
+    icon: PanelTop,
+    items: [
+      { title: "Morphing Navbar", href: "/docs/components/morphing-navbar" },
+    ]
+  },
+  {
+    title: "Buttons",
+    icon: MousePointer2,
+    items: [
+      { title: "Magic Button", href: "/docs/magic-button" },
+      { title: "Animated Button", href: "/docs/components/animated-button" },
+      { title: "Pulse Button", href: "/docs/components/pulse-button" },
+    ]
+  },
+  {
+    title: "Cards",
+    icon: CreditCard,
+    items: [
+      { title: "Rotating Card", href: "/docs/components/rotating-card" },
+    ]
+  },
+  {
+    title: "Layout",
+    icon: Layout,
+    items: [
+      { title: "Dock", href: "/docs/dock" },
+    ]
+  },
+  {
+    title: "Text",
+    icon: Type,
+    items: [
+      { title: "Floating Text", href: "/docs/components/floating-text" },
+    ]
+  }
+];
 
 export default async function DocsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const docs = await getAllDocs();
-
   return (
     <div className="flex min-h-screen bg-background">
-      <aside className="w-64 border-r border-border bg-white/40 backdrop-blur-xl sticky top-0 h-screen overflow-y-auto hidden md:block">
+      <aside className="w-64 border-r border-border bg-[#F7F5F3]/40 backdrop-blur-xl sticky top-0 h-screen overflow-y-auto hidden md:block">
         <div className="p-8">
           <Link
             href="/"
-            className="flex items-center gap-3 text-lg font-bold text-foreground mb-12"
+            className="flex items-center gap-3 text-lg font-bold text-[#37322F] mb-12"
           >
-            <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-primary-foreground" />
+            <div className="w-9 h-9 rounded-full bg-[#37322F] flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-[#F7F5F3]" />
             </div>
             <span className="font-serif tracking-tight text-xl">React UI</span>
           </Link>
-          <nav className="space-y-10">
-            <div>
-              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 px-3 mb-5">
-                Components
-              </h4>
-              <div className="space-y-1">
-                {docs.map((doc) => (
-                  <Link
-                    key={doc.slug}
-                    href={`/docs/${doc.slug}`}
-                    className="flex items-center px-4 py-2.5 text-[15px] font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-all"
-                  >
-                    {doc.frontmatter.title}
-                  </Link>
-                ))}
+          
+          <nav className="space-y-8">
+            {DOC_CATEGORIES.map((category) => (
+              <div key={category.title}>
+                <div className="flex items-center gap-2 px-3 mb-3 text-muted-foreground/60">
+                  <category.icon className="w-3.5 h-3.5" />
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.2em]">
+                    {category.title}
+                  </h4>
+                </div>
+                <div className="space-y-1">
+                  {category.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center px-4 py-2 text-[14px] font-medium rounded-lg text-[#605A57] hover:text-[#37322F] hover:bg-[#F0EDEA] transition-all"
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </nav>
         </div>
       </aside>
