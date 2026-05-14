@@ -1,0 +1,45 @@
+---
+title: Rotating Card
+description: A 3D-style rotating card that responds to user hover with smooth perspective shifts.
+---
+
+A 3D-style rotating card that responds to user hover with smooth perspective shifts. Adds depth and interactivity to feature displays or profile cards.
+
+<ComponentPreview name="rotating-card" />
+
+## Installation
+
+### CLI
+
+```bash
+npx react-ui-component add rotating-card
+```
+
+### Manual
+
+1. Copy the code from the component tab.
+2. Create a file at `components/ui/rotating-card.tsx`.
+3. Paste the code.
+
+## Usage
+
+```tsx
+import { RotatingCard } from "@/components/ui/rotating-card";
+
+export default function Example() {
+  return (
+    <RotatingCard>
+      <div className="p-8 h-48 flex items-center justify-center">
+        <h3 className="text-xl font-serif">Feature Card</h3>
+      </div>
+    </RotatingCard>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | - | The content inside the card. |
+| `className` | `string` | - | Additional CSS classes for the card. |

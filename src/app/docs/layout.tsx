@@ -8,14 +8,13 @@ import {
   PanelTop,
   Sparkles
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const DOC_CATEGORIES = [
   {
     title: "Headers",
     icon: PanelTop,
     items: [
-      { title: "Morphing Navbar", href: "/docs/components/morphing-navbar" },
+      { title: "Morphing Navbar", href: "/docs/morphing-navbar" },
     ]
   },
   {
@@ -23,15 +22,15 @@ const DOC_CATEGORIES = [
     icon: MousePointer2,
     items: [
       { title: "Magic Button", href: "/docs/magic-button" },
-      { title: "Animated Button", href: "/docs/components/animated-button" },
-      { title: "Pulse Button", href: "/docs/components/pulse-button" },
+      { title: "Animated Button", href: "/docs/animated-button" },
+      { title: "Pulse Button", href: "/docs/pulse-button" },
     ]
   },
   {
     title: "Cards",
     icon: CreditCard,
     items: [
-      { title: "Rotating Card", href: "/docs/components/rotating-card" },
+      { title: "Rotating Card", href: "/docs/rotating-card" },
     ]
   },
   {
@@ -45,7 +44,7 @@ const DOC_CATEGORIES = [
     title: "Text",
     icon: Type,
     items: [
-      { title: "Floating Text", href: "/docs/components/floating-text" },
+      { title: "Floating Text", href: "/docs/floating-text" },
     ]
   }
 ];
@@ -56,7 +55,7 @@ export default async function DocsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen bg-background text-[#37322F]">
       <aside className="w-64 border-r border-border bg-[#F7F5F3]/40 backdrop-blur-xl sticky top-0 h-screen overflow-y-auto hidden md:block">
         <div className="p-8">
           <Link
@@ -72,7 +71,7 @@ export default async function DocsLayout({
           <nav className="space-y-8">
             {DOC_CATEGORIES.map((category) => (
               <div key={category.title}>
-                <div className="flex items-center gap-2 px-3 mb-3 text-muted-foreground/60">
+                <div className="flex items-center gap-2 px-3 mb-3 text-[#605A57]/60">
                   <category.icon className="w-3.5 h-3.5" />
                   <h4 className="text-[10px] font-bold uppercase tracking-[0.2em]">
                     {category.title}
@@ -96,15 +95,15 @@ export default async function DocsLayout({
       </aside>
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-16 border-b border-border bg-white/80 backdrop-blur-md flex items-center px-6 md:hidden sticky top-0 z-50">
-           <Link href="/" className="font-serif text-xl font-bold text-foreground">
+           <Link href="/" className="font-serif text-xl font-bold text-[#37322F]">
             React UI
           </Link>
         </header>
-        <div className="flex-1 overflow-x-hidden p-8 md:p-12">
-          <div className="max-w-[1600px] mx-auto">
+        <main className="flex-1 overflow-x-hidden p-8 md:p-12 lg:p-16">
+          <div className="max-w-[1200px] mx-auto">
             {children}
           </div>
-        </div>
+        </main>
       </div>
     </div>
   );

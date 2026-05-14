@@ -1,0 +1,43 @@
+---
+title: Pulse Button
+description: A button with an organic, rhythmic pulsing animation to draw user attention.
+---
+
+A button with an organic, rhythmic pulsing animation to draw user attention. Perfect for primary calls to action or "live" indicators.
+
+<ComponentPreview name="pulse-button" />
+
+## Installation
+
+### CLI
+
+```bash
+npx react-ui-component add pulse-button
+```
+
+### Manual
+
+1. Copy the code from the component tab.
+2. Create a file at `components/ui/pulse-button.tsx`.
+3. Paste the code.
+
+## Usage
+
+```tsx
+import { PulseButton } from "@/components/ui/pulse-button";
+
+export default function Example() {
+  return (
+    <PulseButton>
+      Get Started
+    </PulseButton>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | - | The content inside the button. |
+| `className` | `string` | - | Additional CSS classes for the button. |

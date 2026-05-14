@@ -138,21 +138,21 @@ export function MorphingNavbar({
 
             <button
               onClick={onHomeClick}
-              className="group flex items-center gap-2 bg-transparent border-none p-0 transition-opacity hover:opacity-80"
+              className="group flex items-center bg-transparent border-none p-0 transition-opacity hover:opacity-80 outline-none"
               aria-label="Go home"
             >
               <motion.div
                 animate={{ scale: collapsed ? 0.9 : 1 }}
-                className="text-[#37322F]"
+                style={{ originX: 0 }}
+                className="grid grid-cols-[auto,auto] items-center gap-3"
               >
-                <Logo className={cn("transition-all duration-500", collapsed ? "h-8 w-8" : "h-9 w-9")} />
+                <div className="flex items-center justify-center">
+                  <Logo className={cn("text-[#37322F] transition-all duration-500", collapsed ? "h-7 w-7" : "h-9 w-9")} />
+                </div>
+                <h1 className="font-serif font-medium tracking-tight text-[#37322F] whitespace-nowrap leading-none text-3xl">
+                  {title}
+                </h1>
               </motion.div>
-              <motion.h1
-                animate={{ fontSize: collapsed ? "1.25rem" : "1.75rem" }}
-                className="font-serif font-normal tracking-tight text-[#37322F] whitespace-nowrap"
-              >
-                {title}
-              </motion.h1>
             </button>
           </div>
 

@@ -1,0 +1,43 @@
+---
+title: Animated Button
+description: A smooth button with hover and tap scale animations using Framer Motion.
+---
+
+A smooth button with hover and tap scale animations using Framer Motion. Built to provide tactile feedback and a premium feel to interactive elements.
+
+<ComponentPreview name="animated-button" />
+
+## Installation
+
+### CLI
+
+```bash
+npx react-ui-component add animated-button
+```
+
+### Manual
+
+1. Copy the code from the component tab.
+2. Create a file at `components/ui/animated-button.tsx`.
+3. Paste the code.
+
+## Usage
+
+```tsx
+import { AnimatedButton } from "@/components/ui/animated-button";
+
+export default function Example() {
+  return (
+    <AnimatedButton>
+      Click Me
+    </AnimatedButton>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | - | The content inside the button. |
+| `className` | `string` | - | Additional CSS classes for the button. |

@@ -1,0 +1,43 @@
+---
+title: Floating Text
+description: A text component that floats and drifts subtly, creating an editorial, high-end feel.
+---
+
+A text component that floats and drifts subtly, creating an editorial, high-end feel. Use it for hero sections or decorative atmospheric text.
+
+<ComponentPreview name="floating-text" />
+
+## Installation
+
+### CLI
+
+```bash
+npx react-ui-component add floating-text
+```
+
+### Manual
+
+1. Copy the code from the component tab.
+2. Create a file at `components/ui/floating-text.tsx`.
+3. Paste the code.
+
+## Usage
+
+```tsx
+import { FloatingText } from "@/components/ui/floating-text";
+
+export default function Example() {
+  return (
+    <FloatingText className="text-4xl font-serif">
+      Editorial Atmosphere
+    </FloatingText>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | - | The text or elements to float. |
+| `className` | `string` | - | Additional CSS classes for the text. |

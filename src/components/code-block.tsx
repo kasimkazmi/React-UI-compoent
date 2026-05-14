@@ -8,7 +8,7 @@ async function getHighlighterInstance() {
   if (!highlighter) {
     highlighter = await createHighlighter({
       themes: ["github-dark"],
-      langs: ["tsx", "bash", "typescript"],
+      langs: ["tsx", "bash", "typescript", "javascript", "jsx"],
     });
   }
   return highlighter;
@@ -24,11 +24,18 @@ export async function CodeBlock({
   minimal?: boolean;
 }) {
   const instance = await getHighlighterInstance();
-
-  const html = instance.codeToHtml(code, {
-    lang,
-    theme: "github-dark",
-  });
+  let html = "";
+  
+  try {
+    html = instance.codeToHtml(code, {
+      lang,
+      theme: "github-dark",
+    });
+  } catch (error) {
+    console.error("Shiki highlighting failed:", error);
+    // Fallback to raw code if highlighting fails
+    html = `<pre><code>${code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
+  }
 
   const content = (
     <div 

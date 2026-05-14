@@ -59,13 +59,13 @@ export const ComponentPreviewClient = ({
             <Tabs.Content
               value="preview"
               forceMount
-              className="relative rounded-xl border border-border bg-white p-12 flex items-center justify-center min-h-[400px] overflow-hidden shadow-sm focus-visible:outline-none"
+              className="relative rounded-xl border border-border bg-white min-h-[400px] overflow-hidden shadow-sm focus-visible:outline-none"
             >
-              <div className="absolute right-4 top-4 z-20">
+              <div className="absolute right-4 bottom-4 z-20">
                 <button
-                  onClick={handleRestart}
-                  className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-secondary hover:bg-muted text-muted-foreground transition-colors"
-                  title="Restart animation"
+                  onClick={() => setKey((prev) => prev + 1)}
+                  className="flex h-8 w-8 items-center justify-center rounded-md border border-[#E0DEDB] bg-white/80 text-[#605A57] backdrop-blur-sm transition-all hover:bg-white hover:text-[#37322F] shadow-sm active:scale-95"
+                  title="Reset Preview"
                   type="button"
                 >
                   <RotateCcw className="h-4 w-4" />
