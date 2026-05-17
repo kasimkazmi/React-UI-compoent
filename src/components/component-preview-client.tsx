@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { motion } from "framer-motion";
-import { FileCode, RotateCcw } from "lucide-react";
+import { FileCode, RotateCcw, ExternalLink } from "lucide-react";
 import { CopyButton } from "./copy-button";
 import { cn } from "@/lib/utils";
 
 interface ComponentPreviewClientProps {
+  name: string;
   preview: React.ReactNode;
   code: string;
   filePath: string;
@@ -15,6 +16,7 @@ interface ComponentPreviewClientProps {
 }
 
 export const ComponentPreviewClient = ({
+  name,
   preview,
   code,
   filePath,
@@ -61,7 +63,16 @@ export const ComponentPreviewClient = ({
               forceMount
               className="relative rounded-xl border border-border bg-white min-h-[400px] overflow-hidden shadow-sm focus-visible:outline-none"
             >
-              <div className="absolute right-4 bottom-4 z-20">
+              <div className="absolute right-4 bottom-4 z-20 flex items-center gap-2">
+                <a
+                  href={`/preview/${name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-8 w-8 items-center justify-center rounded-md border border-[#E0DEDB] bg-white/80 text-[#605A57] backdrop-blur-sm transition-all hover:bg-white hover:text-[#37322F] shadow-sm active:scale-95"
+                  title="Open Standalone Live Demo"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
                 <button
                   onClick={() => setKey((prev) => prev + 1)}
                   className="flex h-8 w-8 items-center justify-center rounded-md border border-[#E0DEDB] bg-white/80 text-[#605A57] backdrop-blur-sm transition-all hover:bg-white hover:text-[#37322F] shadow-sm active:scale-95"

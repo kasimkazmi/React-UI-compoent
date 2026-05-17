@@ -39,6 +39,7 @@ export const ComponentPreview = async ({ name }: ComponentPreviewProps) => {
 
   return (
     <ComponentPreviewClient
+      name={name}
       preview={<Preview />}
       code={component.content}
       filePath={filePath}
