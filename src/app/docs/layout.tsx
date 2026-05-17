@@ -6,7 +6,8 @@ import {
   Type, 
   CreditCard, 
   PanelTop,
-  Sparkles
+  Sparkles,
+  LayoutTemplate
 } from "lucide-react";
 
 const DOC_CATEGORIES = [
@@ -36,6 +37,13 @@ const DOC_CATEGORIES = [
   {
     title: "Layout",
     icon: Layout,
+    items: [
+      { title: "Coming Soon", href: "/docs/coming-soon" },
+    ]
+  },
+  {
+    title: "Template",
+    icon: LayoutTemplate,
     items: [
       { title: "Coming Soon", href: "/docs/coming-soon" },
     ]
