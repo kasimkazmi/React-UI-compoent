@@ -68,10 +68,13 @@ export const ComponentPreviewClient = ({
                   href={`/preview/${name}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-8 w-8 items-center justify-center rounded-md border border-[#E0DEDB] bg-white/80 text-[#605A57] backdrop-blur-sm transition-all hover:bg-white hover:text-[#37322F] shadow-sm active:scale-95"
+                  className="group/btn flex h-8 w-8 hover:w-auto items-center justify-center hover:justify-start rounded-md border border-[#E0DEDB] bg-white/80 px-2 text-[#605A57] backdrop-blur-sm transition-all duration-300 ease-out hover:bg-white hover:text-[#37322F] hover:px-3 hover:gap-1.5 shadow-sm active:scale-95 overflow-hidden"
                   title="Open Standalone Live Demo"
                 >
-                  <ExternalLink className="h-4 w-4" />
+                  <ExternalLink className="h-4 w-4 shrink-0" />
+                  <span className="max-w-0 overflow-hidden whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.15em] opacity-0 transition-all duration-300 ease-out group-hover/btn:max-w-[100px] group-hover/btn:opacity-100">
+                    Live Preview
+                  </span>
                 </a>
                 <button
                   onClick={() => setKey((prev) => prev + 1)}
