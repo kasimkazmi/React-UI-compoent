@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { DeveloperCard } from "./developer-card";
 
 interface TableOfContentsProps {
   items: {
@@ -65,35 +66,41 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   }, [items]);
 
   return (
-    <div className="sticky top-24 h-fit max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 scrollbar-none">
-      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#605A57]/60 mb-6">On This Page</p>
-      <ul className="space-y-4 text-[13px] font-medium text-[#605A57]">
-        {items.map((item) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className={cn(
-                "block transition-all duration-300 hover:text-[#37322F]",
-                activeId === item.id 
-                  ? "text-[#37322F] translate-x-1" 
-                  : "text-[#605A57]"
-              )}
-            >
-              <div className="flex items-center gap-2">
-                <div className={cn(
-                  "h-1 w-1 rounded-full transition-all duration-300",
-                  activeId === item.id ? "bg-[#37322F] scale-100" : "bg-transparent scale-0"
-                )} />
-                {item.title}
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
+    <div className="sticky top-24 h-fit max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 scrollbar-none flex flex-col justify-between gap-12">
+      <div>
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#605A57]/60 mb-6">On This Page</p>
+        <ul className="space-y-4 text-[13px] font-medium text-[#605A57]">
+          {items.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={cn(
+                  "block transition-all duration-300 hover:text-[#37322F]",
+                  activeId === item.id 
+                    ? "text-[#37322F] translate-x-1" 
+                    : "text-[#605A57]"
+                )}
+              >
+                <div className="flex items-center gap-2">
+                  <div className={cn(
+                    "h-1 w-1 rounded-full transition-all duration-300",
+                    activeId === item.id ? "bg-[#37322F] scale-100" : "bg-transparent scale-0"
+                  )} />
+                  {item.title}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-4 pt-4 border-t border-[#E0DEDB]/60">
+        <DeveloperCard />
+      </div>
     </div>
   );
 }
