@@ -66,7 +66,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   }, [items]);
 
   return (
-    <div className="sticky top-24 h-fit max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 scrollbar-none flex flex-col justify-between gap-12">
+    <div className="sticky top-24 h-[calc(100vh-8rem)] overflow-y-auto pr-4 scrollbar-none flex flex-col justify-between gap-12">
       <div>
         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#605A57]/60 mb-6">On This Page</p>
         <ul className="space-y-4 text-[13px] font-medium text-[#605A57]">
