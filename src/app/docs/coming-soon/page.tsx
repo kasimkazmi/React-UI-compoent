@@ -41,8 +41,11 @@ export default function ComingSoonPage() {
         transition={{ duration: 1, delay: 0.5 }}
         className="flex items-center gap-2 text-[#37322F]/40 text-xs font-bold uppercase tracking-[0.3em]"
       >
-        <Sparkles className="w-3 h-3" />
-        <span>React UI Component Library</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#37322F]/40">
+          <path d="M4 20V8a4 4 0 0 1 8 0v12" />
+          <path d="M12 20V8a4 4 0 0 1 8 0v12" />
+        </svg>
+        <span>Modus UI Component Library</span>
       </motion.div>
     </div>
   );

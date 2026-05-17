@@ -62,10 +62,13 @@ export default async function DocsLayout({
             href="/"
             className="flex items-center gap-3 text-lg font-bold text-[#37322F] mb-12"
           >
-            <div className="w-9 h-9 rounded-full bg-[#37322F] flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-[#F7F5F3]" />
+            <div className="w-9 h-9 rounded-full bg-[#37322F] flex items-center justify-center shadow-sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7F5F3] translate-y-[1px]">
+                <path d="M4 20V8a4 4 0 0 1 8 0v12" />
+                <path d="M12 20V8a4 4 0 0 1 8 0v12" />
+              </svg>
             </div>
-            <span className="font-serif tracking-tight text-xl">React UI</span>
+            <span className="font-serif tracking-tight text-xl">Modus UI</span>
           </Link>
           
           <nav className="space-y-8">
@@ -95,8 +98,14 @@ export default async function DocsLayout({
       </aside>
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-16 border-b border-border bg-white/80 backdrop-blur-md flex items-center px-6 md:hidden sticky top-0 z-50">
-           <Link href="/" className="font-serif text-xl font-bold text-[#37322F]">
-            React UI
+           <Link href="/" className="flex items-center gap-2 font-serif text-xl font-bold text-[#37322F]">
+            <div className="w-6 h-6 rounded-full bg-[#37322F] flex items-center justify-center shadow-sm">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7F5F3] translate-y-[0.5px]">
+                <path d="M4 20V8a4 4 0 0 1 8 0v12" />
+                <path d="M12 20V8a4 4 0 0 1 8 0v12" />
+              </svg>
+            </div>
+            <span>Modus UI</span>
           </Link>
         </header>
         <main className="flex-1 p-8 md:p-12 lg:p-16">

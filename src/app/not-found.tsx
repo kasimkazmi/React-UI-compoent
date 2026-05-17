@@ -26,8 +26,11 @@ export default function NotFound() {
           transition={{ duration: 1, delay: 0.2 }}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#E0DEDB] bg-white/50 backdrop-blur-sm text-[10px] font-bold uppercase tracking-[0.2em] text-[#605A57] mb-8"
         >
-          <Sparkles className="w-3 h-3" />
-          <span>React UI Component Library</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#37322F]">
+            <path d="M4 20V8a4 4 0 0 1 8 0v12" />
+            <path d="M12 20V8a4 4 0 0 1 8 0v12" />
+          </svg>
+          <span>Modus UI Component Library</span>
         </motion.div>
 
         <h1 className="text-[120px] md:text-[180px] font-serif leading-none tracking-tighter mb-4 text-[#37322F]">
@@ -58,7 +61,7 @@ export default function NotFound() {
       </motion.div>
 
       <footer className="absolute bottom-12 text-[10px] font-bold uppercase tracking-[0.3em] text-[#605A57]/40">
-        React UI Documentation
+        Modus UI Documentation
       </footer>
     </div>
   );

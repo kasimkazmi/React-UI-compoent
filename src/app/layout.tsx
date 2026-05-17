@@ -14,8 +14,8 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "React UI Component",
-  description: "Custom UI components library",
+  title: "Modus UI",
+  description: "A premium, editorial-grade React component library built with restraint and typographic precision.",
 };
 
 export default function RootLayout({

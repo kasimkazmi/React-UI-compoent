@@ -55,7 +55,7 @@ export default function ComponentsPage() {
       </div>
 
       <footer className="mt-32 pt-8 border-t border-[#E0DEDB]/40 flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.3em] text-[#605A57]/40">
-        <span>React UI Library</span>
+        <span>Modus UI Library</span>
         <span>Version 1.0.0</span>
       </footer>
     </div>
