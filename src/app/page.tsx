@@ -31,12 +31,14 @@ export default function HomePage() {
             Explore Components
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>
-          <Link
-            href="https://github.com"
+          <a
+            href="https://github.com/kasimkazmi/Modus-UI"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center h-14 px-10 rounded-full border border-border bg-white text-foreground font-semibold transition-all hover:bg-secondary"
           >
             Github Reference
-          </Link>
+          </a>
         </div>
       </div>
 
