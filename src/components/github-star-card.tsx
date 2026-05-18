@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
 function GithubIcon({ className }: { className?: string }) {
@@ -21,6 +21,19 @@ function GithubIcon({ className }: { className?: string }) {
 }
 
 export function GitHubStarCard() {
+  const [stars, setStars] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/kasimkazmi/Modus-UI")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && typeof data.stargazers_count === "number") {
+          setStars(data.stargazers_count);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <div className="rounded-xl border border-[#E0DEDB] bg-[#F7F5F3]/50 p-4 shadow-sm hover:shadow-md transition-all duration-300">
       {/* Category Header */}
@@ -46,6 +59,12 @@ export function GitHubStarCard() {
       >
         <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400 group-hover/btn:rotate-[15deg] transition-transform duration-300" />
         <span>Star on GitHub</span>
+        {stars !== null && (
+          <>
+            <span className="w-1 h-1 rounded-full bg-[#FAF9F7]/30" />
+            <span className="font-mono text-[10px] tracking-wider bg-white/10 px-1.5 py-0.5 rounded">{stars}</span>
+          </>
+        )}
       </a>
     </div>
   );
