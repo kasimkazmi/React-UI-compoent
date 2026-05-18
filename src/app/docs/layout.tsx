@@ -6,6 +6,7 @@ import {
   Type, 
   CreditCard, 
   PanelTop,
+  PanelBottom,
   Sparkles,
   LayoutTemplate,
   BookOpen
@@ -36,10 +37,16 @@ const DOC_CATEGORIES = [
     ]
   },
   {
+    title: "Footers",
+    icon: PanelBottom,
+    items: [
+      { title: "Notch Footer", href: "/docs/notch-footer" },
+    ]
+  },
+  {
     title: "Layout",
     icon: Layout,
     items: [
-      { title: "Notch Footer", href: "/docs/notch-footer" },
       { title: "Coming Soon", href: "/docs/coming-soon" },
     ]
   },
