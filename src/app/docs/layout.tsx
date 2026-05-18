@@ -7,7 +7,8 @@ import {
   CreditCard, 
   PanelTop,
   Sparkles,
-  LayoutTemplate
+  LayoutTemplate,
+  BookOpen
 } from "lucide-react";
 
 const DOC_CATEGORIES = [
@@ -53,6 +54,13 @@ const DOC_CATEGORIES = [
     icon: Type,
     items: [
       { title: "Floating Text", href: "/docs/floating-text" },
+    ]
+  },
+  {
+    title: "Resources",
+    icon: BookOpen,
+    items: [
+      { title: "Blog (Coming Soon)", href: "/blog" },
     ]
   }
 ];
