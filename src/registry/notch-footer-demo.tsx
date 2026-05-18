@@ -49,7 +49,7 @@ export function NotchFooterDemo() {
         buttonText="Get started for free"
         onButtonClick={handleAction}
         logo={customLogo}
-        bgColorClass="bg-gradient-to-br from-[#7B1FA2] via-[#8E24AA] to-[#512DA8]"
+        bgColorClass="bg-[#37322F]" // Modus UI brand dark theme color
         notchFillColor="#FAF9F7" // Match the demo parent bg perfectly for seamless notched hollow effect
         className="w-full"
       />

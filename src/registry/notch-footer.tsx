@@ -36,8 +36,8 @@ export function NotchFooter({
   buttonHref,
   logo,
   bgColorClass = "bg-[#37322F]", // Modus UI's premium warm dark brand color
-  titleColorClass = "text-[#FAF9F7]",
-  buttonColorClass = "border-white/20 hover:border-white bg-white/10 hover:bg-white text-white hover:text-[#37322F]",
+  titleColorClass = "!text-[#FAF9F7]", // Protect from .prose overrides
+  buttonColorClass = "border-white/20 hover:border-white bg-white/10 hover:bg-white !text-white hover:!text-[#37322F]", // Protect from .prose overrides
   dotColorClass = "bg-white/30",
   notchFillColor = "#F7F5F3", // Modus UI's premium warm light background
   className,
@@ -73,26 +73,30 @@ export function NotchFooter({
         </svg>
       </div>
 
-      {/* 2. Logo container floating inside the Notch */}
-      <motion.div
-        animate={{
-          y: isHovered ? 4 : 0,
-          scale: isHovered ? 1.05 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
+      {/* 2. Logo container floating inside the Notch (Spatially isolated static wrapper to avoid Framer Motion transform overrides) */}
+      <div
         className="absolute top-0 left-1/2 -translate-x-1/2 h-[38px] flex items-center justify-center"
         style={{ zIndex: 20 }}
       >
-        {logo || (
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-white/95 rounded-full shadow-sm border border-[#E0DEDB]/40 select-none">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-[#37322F] animate-pulse">
-              <path d="M4 20V8a4 4 0 0 1 8 0v12" />
-              <path d="M12 20V8a4 4 0 0 1 8 0v12" />
-            </svg>
-            <span className="font-serif text-[10px] font-bold text-[#37322F] tracking-wider uppercase">Modus</span>
-          </div>
-        )}
-      </motion.div>
+        <motion.div
+          animate={{
+            y: isHovered ? 4 : 0,
+            scale: isHovered ? 1.05 : 1,
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+          className="flex items-center justify-center"
+        >
+          {logo || (
+            <div className="flex items-center gap-1.5 px-3 py-1 bg-white/95 rounded-full shadow-sm border border-[#E0DEDB]/40 select-none">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-[#37322F] animate-pulse">
+                <path d="M4 20V8a4 4 0 0 1 8 0v12" />
+                <path d="M12 20V8a4 4 0 0 1 8 0v12" />
+              </svg>
+              <span className="font-serif text-[10px] font-bold text-[#37322F] tracking-wider uppercase">Modus</span>
+            </div>
+          )}
+        </motion.div>
+      </div>
 
       {/* 3. Left Dotted Grid Decoration */}
       <div className="absolute bottom-6 left-6 hidden sm:block opacity-75">
