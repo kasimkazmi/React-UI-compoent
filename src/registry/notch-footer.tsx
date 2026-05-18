@@ -54,20 +54,20 @@ export function NotchFooter({
         className
       )}
     >
-      {/* 1. Fluid Liquid Notch Pocket (Mathematically symmetric viewBox 240x48) */}
+      {/* 1. Fluid Liquid Notch Pocket (Mathematically symmetric viewBox 240x50 with top border overlap masking) */}
       <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[240px] h-[48px] select-none pointer-events-none"
+        className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[240px] h-[50px] select-none pointer-events-none"
         style={{ zIndex: 10 }}
       >
         <svg
-          viewBox="0 0 240 48"
+          viewBox="0 -2 240 50"
           width="240"
-          height="48"
+          height="50"
           className="w-full h-full"
           preserveAspectRatio="none"
         >
           <path
-            d="M 0 0 C 20 0, 20 48, 40 48 L 200 48 C 220 48, 220 0, 240 0 Z"
+            d="M 0 -2 L 0 0 C 20 0, 20 48, 40 48 L 200 48 C 220 48, 220 0, 240 0 L 240 -2 Z"
             fill={notchFillColor}
           />
         </svg>
