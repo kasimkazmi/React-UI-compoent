@@ -6,6 +6,7 @@ import { AnimatedButtonDemo } from "@/registry/animated-button-demo";
 import { PulseButtonDemo } from "@/registry/pulse-button-demo";
 import { RotatingCardDemo } from "@/registry/rotating-card-demo";
 import { FloatingTextDemo } from "@/registry/floating-text-demo";
+import { NotchFooterDemo } from "@/registry/notch-footer-demo";
 import { ComponentPreviewClient } from "./component-preview-client";
 import { CodeBlock } from "./code-block";
 
@@ -17,6 +18,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   "pulse-button": PulseButtonDemo,
   "rotating-card": RotatingCardDemo,
   "floating-text": FloatingTextDemo,
+  "notch-footer": NotchFooterDemo,
 };
 
 interface ComponentPreviewProps {

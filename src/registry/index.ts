@@ -36,4 +36,10 @@ export const registry = [
     dependencies: ["framer-motion"],
     files: ["registry/floating-text.tsx"],
   },
+  {
+    name: "notch-footer",
+    type: "components:ui",
+    dependencies: ["framer-motion", "clsx", "tailwind-merge"],
+    files: ["registry/notch-footer.tsx"],
+  },
 ];

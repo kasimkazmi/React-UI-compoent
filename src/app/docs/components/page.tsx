@@ -9,6 +9,7 @@ const COMPONENT_LIST = [
   { title: "Pulse Button", href: "/docs/pulse-button" },
   { title: "Rotating Card", href: "/docs/rotating-card" },
   { title: "Floating Text", href: "/docs/floating-text" },
+  { title: "Notch Footer", href: "/docs/notch-footer" },
   { title: "Coming Soon", href: "/docs/coming-soon", disabled: true },
 ];
 

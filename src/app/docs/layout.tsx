@@ -39,6 +39,7 @@ const DOC_CATEGORIES = [
     title: "Layout",
     icon: Layout,
     items: [
+      { title: "Notch Footer", href: "/docs/notch-footer" },
       { title: "Coming Soon", href: "/docs/coming-soon" },
     ]
   },
