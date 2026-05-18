@@ -47,7 +47,7 @@ export function GitHubStarCard() {
       
       {/* Subtitle */}
       <p className="text-xs text-[#605A57] leading-relaxed mt-1.5 mb-4">
-        Premium React components designed with restraint and typographic precision.
+        Modus UI is completely free, open-source, and crafted for typographic precision. Support our craft with a star!
       </p>
 
       {/* CTA Button */}
@@ -59,7 +59,7 @@ export function GitHubStarCard() {
       >
         <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400 group-hover/btn:rotate-[15deg] transition-transform duration-300" />
         <span>Star on GitHub</span>
-        {stars !== null && (
+        {stars !== null && stars > 0 && (
           <>
             <span className="w-1 h-1 rounded-full bg-[#FAF9F7]/30" />
             <span className="font-mono text-[10px] tracking-wider bg-white/10 px-1.5 py-0.5 rounded">{stars}</span>
