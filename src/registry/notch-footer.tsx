@@ -49,25 +49,41 @@ export function NotchFooter({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "relative w-full rounded-3xl overflow-hidden py-16 px-8 md:px-16 flex flex-col items-center justify-center text-center shadow-xl border border-[#E0DEDB]/10",
+        "relative w-full rounded-3xl overflow-hidden py-16 px-8 md:px-16 flex flex-col items-center justify-center text-center shadow-xl",
         bgColorClass,
         className
       )}
     >
-      {/* 1. Fluid Liquid Notch Pocket (Mathematically symmetric viewBox 240x50 with top border overlap masking) */}
+      {/* 0. Border Outline Layer (Spatially layered at z-5, constructs the bottom, left, and right border frames) */}
       <div 
-        className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[240px] h-[50px] select-none pointer-events-none"
+        className="absolute inset-0 rounded-3xl border-b border-l border-r border-[#E0DEDB]/10 pointer-events-none"
+        style={{ zIndex: 5 }}
+      />
+      {/* Left Top Border Segment (Stops exactly at the start of the notch curves) */}
+      <div 
+        className="absolute top-0 left-0 h-[1px] bg-[#E0DEDB]/10 pointer-events-none"
+        style={{ zIndex: 5, width: "calc(50% - 120px)" }}
+      />
+      {/* Right Top Border Segment (Starts exactly at the end of the notch curves) */}
+      <div 
+        className="absolute top-0 right-0 h-[1px] bg-[#E0DEDB]/10 pointer-events-none"
+        style={{ zIndex: 5, width: "calc(50% - 120px)" }}
+      />
+
+      {/* 1. Fluid Liquid Notch Pocket (Layered at z-10 to mask the top border line perfectly) */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[240px] h-[48px] select-none pointer-events-none"
         style={{ zIndex: 10 }}
       >
         <svg
-          viewBox="0 -2 240 50"
+          viewBox="0 0 240 48"
           width="240"
-          height="50"
+          height="48"
           className="w-full h-full"
           preserveAspectRatio="none"
         >
           <path
-            d="M 0 -2 L 0 0 C 20 0, 20 48, 40 48 L 200 48 C 220 48, 220 0, 240 0 L 240 -2 Z"
+            d="M 0 0 C 20 0, 20 48, 40 48 L 200 48 C 220 48, 220 0, 240 0 Z"
             fill={notchFillColor}
           />
         </svg>
