@@ -33,19 +33,9 @@ export function GitHubStarCard() {
       <h4 className="font-serif text-2xl text-[#37322F] tracking-tight font-normal">Modus UI</h4>
       
       {/* Subtitle */}
-      <p className="text-xs text-[#605A57] leading-relaxed mt-1.5 mb-3">
-        The premium, editorial-grade React component library, open-source and available on GitHub!
+      <p className="text-xs text-[#605A57] leading-relaxed mt-1.5 mb-4">
+        Premium React components designed with restraint and typographic precision.
       </p>
-
-      {/* Repo Link */}
-      <a 
-        href="https://github.com/kasimkazmi/Modus-UI"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[11px] font-semibold text-[#605A57] hover:text-[#37322F] underline underline-offset-4 decoration-[#E0DEDB] hover:decoration-[#37322F] transition-all block mb-4"
-      >
-        github.com/kasimkazmi/Modus-UI
-      </a>
 
       {/* CTA Button */}
       <a
