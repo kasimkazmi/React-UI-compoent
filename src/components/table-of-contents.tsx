@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { DeveloperCard } from "./developer-card";
+import { GitHubStarCard } from "./github-star-card";
 
 interface TableOfContentsProps {
   items: {
@@ -98,7 +99,8 @@ export function TableOfContents({ items }: TableOfContentsProps) {
         </ul>
       </div>
 
-      <div className="mt-4 pt-4 border-t border-[#E0DEDB]/60">
+      <div className="mt-4 pt-4 border-t border-[#E0DEDB]/60 flex flex-col gap-4">
+        <GitHubStarCard />
         <DeveloperCard />
       </div>
     </div>
