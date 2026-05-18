@@ -18,7 +18,7 @@ export function DeveloperCard() {
           rel="noopener noreferrer"
           aria-label="Buy me a coffee"
           title="Buy me a coffee"
-          className="group/coffee inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#E0DEDB] bg-white text-amber-500 transition-all hover:border-amber-500/30 hover:bg-amber-50/50 shadow-sm active:scale-95"
+          className="group/coffee inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#E0DEDB] bg-white text-amber-500 transition-all hover:border-[#FFDD00] hover:bg-[#FFDD00] shadow-sm active:scale-95"
         >
           <img
             src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExenhvbDVrajNocXBpb2Z2b2k4aWZ6dXRxeTZyYmh6eWc3MGM5bTJ3ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TDQOtnWgsBx99cNoyH/giphy.gif"
