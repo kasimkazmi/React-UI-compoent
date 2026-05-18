@@ -30,7 +30,7 @@ export default function HomePage() {
       </header>
 
       {/* Main Hero Container */}
-      <div className="relative z-10 w-full max-w-[1400px] px-6 text-center my-auto flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 text-center my-auto flex flex-col items-center">
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-border bg-white/50 text-muted-foreground text-sm font-medium mb-8 backdrop-blur-sm">
           <Sparkles className="w-4 h-4 text-primary/60" />
           <span>Now with precision editorial design</span>
