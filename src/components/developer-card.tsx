@@ -8,7 +8,7 @@ export function DeveloperCard() {
     <div className="rounded-xl border border-[#E0DEDB] bg-[#F7F5F3]/50 p-4 shadow-sm hover:shadow-md transition-all duration-300">
       {/* Title */}
       <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#605A57]/60">Developer</p>
-      
+
       {/* Name and Buy Me A Coffee link */}
       <div className="mt-2 flex items-center justify-between gap-2">
         <h4 className="font-serif text-2xl text-[#37322F] tracking-tight font-normal">Kasim Dev</h4>
